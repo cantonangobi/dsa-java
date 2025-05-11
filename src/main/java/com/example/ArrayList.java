@@ -168,6 +168,9 @@ public class ArrayList<T> {
             list[i] = list[i + 1];
         }
         size -= 1;
+        if (size * 2 < capacity && capacity > 10){
+            resizeDown();
+        }
         return element;
     }
 
