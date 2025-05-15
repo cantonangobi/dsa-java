@@ -164,7 +164,7 @@ public class ArrayList<T> {
             throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
         }
         T element = list[index];
-        for (int i = index; i < size; i++){
+        for (int i = index; i < size-1; i++){
             list[i] = list[i + 1];
         }
         size -= 1;

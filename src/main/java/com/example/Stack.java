@@ -4,36 +4,32 @@ public class Stack<T> {
     ArrayList<T> stack;
 
     public Stack(){
-        //todo: implement
+        stack = new ArrayList<>();
     }
 
     public String toString(){
-        //todo: implement
-        return "";
+        return String.valueOf(stack);
     }
 
     public boolean isEmpty(){
-        //todo: implement
-        return true;
+        return stack.isEmpty();
     }
 
     public int size(){
         //todo: implement
-        return 0;
+        return stack.size();
     }
 
     public void push(T element){
-        //todo:implement
+        stack.add(element);
     }
 
     public T peek(){
-        //todo: implement
-        return null;
+        return stack.getLast();
     }
 
     public T pop(){
-        //todo: implement
-        return null;
+        return stack.removeLast();
     }
 
 }

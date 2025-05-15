@@ -1,16 +1,20 @@
 package com.example;
 
 public class Node<T> {
-    T element;
-    Node<T> next;
+    private T element;
+    private Node<T> next;
     
     public Node(T element) {
         this.element = element;
     }
 
     public String toString(){
-        //todo: implement
-        return "";
+        String string = String.valueOf(element);
+
+        if (next != null){
+            string = string + ", " + next;
+        }
+        return  string;
     }
 
     public T getElement() {

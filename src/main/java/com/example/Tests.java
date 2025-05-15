@@ -1,7 +1,7 @@
 package com.example;
 
 // import java.util.ArrayList;
-import java.util.LinkedList;
+// import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -312,6 +312,7 @@ public abstract class Tests {
         System.out.println();
 
         //testing get, getfirst and getlast functions
+        System.out.println(linked_list);
         System.out.println("//testing get, getfirst and getlast functions...\n");
         // System.out.println("Value of index -1: " + linked_list.get(-1));
         System.out.println("Value of index of 0: " + linked_list.get(0));
@@ -368,9 +369,16 @@ public abstract class Tests {
         System.out.println(linked_list);
         System.out.println();
 
-        //test reversed method
-        System.out.println("//testing reversed method...\n");
-        System.out.println(linked_list.reversed());
+        // //test reversed method
+        // System.out.println("//testing reversed method...\n");
+        // System.out.println(linked_list.reversed());
+        // System.out.println();
+
+        //test reverse in place method
+        System.out.println("//testing reverse in place method...\n");
+        linked_list.reverseInPlace();
+        // System.out.println(linked_list);
+        System.out.println(linked_list.get(0));
         System.out.println();
 
         //testing the clear method
@@ -459,70 +467,70 @@ public abstract class Tests {
     public static void testQueue(){
         System.out.println("Testing queue...\n");
 
-        //testing constructor, toString, isEmpty and size functions
-        System.out.println("//testing constructor, toString, isEmpty and size functions");
-        Queue<Integer> queue = new LinkedList<>();
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
+        // //testing constructor, toString, isEmpty and size functions
+        // System.out.println("//testing constructor, toString, isEmpty and size functions");
+        // Queue<Integer> queue = new LinkedList<>();
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
 
 
-        //testing add function
-        System.out.println("//testing add function...\n");
-        queue.add(3);
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
+        // //testing add function
+        // System.out.println("//testing add function...\n");
+        // queue.add(3);
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
 
-        queue.add(4);
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
+        // queue.add(4);
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
 
-        queue.add(5);
-        queue.add(6);
-        queue.add(7);
-        queue.add(8);
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
+        // queue.add(5);
+        // queue.add(6);
+        // queue.add(7);
+        // queue.add(8);
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
 
-        //testing peek function
-        System.out.println("//testing peek function...\n");
-        System.out.println("The element in front of the queue is: " + queue.peek());
-        System.out.println();
+        // //testing peek function
+        // System.out.println("//testing peek function...\n");
+        // System.out.println("The element in front of the queue is: " + queue.peek());
+        // System.out.println();
 
-        //testing poll function
-        System.out.println("//testing poll function...\n");
-        System.out.println("removing " + queue.poll());
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
-        System.out.println("The element in front of the queue is: " + queue.peek());
-        System.out.println();
+        // //testing poll function
+        // System.out.println("//testing poll function...\n");
+        // System.out.println("removing " + queue.poll());
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
+        // System.out.println("The element in front of the queue is: " + queue.peek());
+        // System.out.println();
 
-        System.out.println("removing " + queue.poll());
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
-        System.out.println("The element in front of the queue is: " + queue.peek());
-        System.out.println();
+        // System.out.println("removing " + queue.poll());
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
+        // System.out.println("The element in front of the queue is: " + queue.peek());
+        // System.out.println();
 
-        queue.poll();
-        queue.poll();
-        System.out.println("removing " + queue.poll());
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
-        System.out.println("The element in front of the queue is: " + queue.peek());
-        System.out.println();
+        // queue.poll();
+        // queue.poll();
+        // System.out.println("removing " + queue.poll());
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
+        // System.out.println("The element in front of the queue is: " + queue.peek());
+        // System.out.println();
 
-        System.out.println("removing " + queue.poll());
-        System.out.println("is the queue empty? " + queue.isEmpty());
-        System.out.println("size: " + queue.size());
-        System.out.println(queue);
-        System.out.println("The element in front of the queue is: " + queue.peek());
-        System.out.println();
+        // System.out.println("removing " + queue.poll());
+        // System.out.println("is the queue empty? " + queue.isEmpty());
+        // System.out.println("size: " + queue.size());
+        // System.out.println(queue);
+        // System.out.println("The element in front of the queue is: " + queue.peek());
+        // System.out.println();
         
 
     }
