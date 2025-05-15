@@ -7,12 +7,12 @@ public class Main {
         System.out.println("Testing Data Structures...");
         System.out.println();
 
-        Tests.testArrayList();
+        // Tests.testArrayList();
 
         // Tests.testLinkedList();
 
         // Tests.testStack();
 
-        // Tests.testQueue();
+        Tests.testQueue();
     }
 }

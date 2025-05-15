@@ -1,14 +1,15 @@
 package com.example;
 
-public class Queue<T> {
-    private LinkedList<T> list;
+public class ArrayQueue<T> {
+    
+    ArrayList<T> list;
 
-    public Queue(){
-        list = new LinkedList<>();
+    public ArrayQueue(){
+        list = new ArrayList<>();
     }
 
     public String toString(){
-        return list.toString();
+        return String.valueOf(list);
     }
 
     public boolean isEmpty(){
@@ -30,4 +31,5 @@ public class Queue<T> {
     public T poll(){
         return list.removeFirst();
     }
+
 }

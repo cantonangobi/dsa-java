@@ -1,35 +1,35 @@
 package com.example;
 
+// import java.util.Stack;
+
 public class Stack<T> {
-    ArrayList<T> stack;
+    private LinkedList<T> list;
 
     public Stack(){
-        stack = new ArrayList<>();
+        list = new LinkedList<>();
     }
 
     public String toString(){
-        return String.valueOf(stack);
+        return list.toString();
     }
 
     public boolean isEmpty(){
-        return stack.isEmpty();
+        return list.isEmpty();
     }
-
+    
     public int size(){
-        //todo: implement
-        return stack.size();
-    }
+        return list.size();
+    }   
 
     public void push(T element){
-        stack.add(element);
+        list.addFirst(element);
     }
 
     public T peek(){
-        return stack.getLast();
+        return list.getFirst();
     }
 
     public T pop(){
-        return stack.removeLast();
+        return list.removeFirst();
     }
-
 }

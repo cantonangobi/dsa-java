@@ -1,8 +1,8 @@
 package com.example;
 
 public class LinkedList<T> {
-    Node<T> head;
-    int size;
+    private Node<T> head;
+    private int size;
 
     public LinkedList(){
         head = null;
