@@ -20,7 +20,7 @@ public class Queue<T> {
     }
 
     public void add(T element){
-        list.add(element);
+        list.addLast(element);
     }
 
     public T peek(){

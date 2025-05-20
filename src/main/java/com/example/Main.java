@@ -13,6 +13,12 @@ public class Main {
 
         // Tests.testStack();
 
-        Tests.testQueue();
+        // Tests.testQueue();
+
+        // Tests.testBST();
+        // System.out.println(9 % 8);
+        
+        Tests.testHashMap();
+
     }
 }

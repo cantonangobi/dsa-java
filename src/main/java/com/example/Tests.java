@@ -1,7 +1,9 @@
 package com.example;
 
+// import java.util.HashMap;
 // import java.util.ArrayList;
 import java.util.LinkedList;
+// import java.util.Map;
 import java.util.Queue;
 // import java.util.Stack;
 
@@ -607,6 +609,295 @@ public abstract class Tests {
 
     }
 
+    public static void testBST(){
+        //testing BST
+        System.out.println("//testing BST...\n");
+
+        System.out.println("//initializing BST with a value of 5...\n");
+        BSTNode tree = new BSTNode(5);
+        System.out.println("The element at the root of the tree is: " + tree.getElement());
+
+        // testing contains
+
+        System.out.println("// testing contains...\n");
+        System.out.println("The tree contains 0: " + tree.contains(0));
+        System.out.println("The tree contains 1: " + tree.contains(1));
+        System.out.println("The tree contains 5: " + tree.contains(5));
+        System.out.println("The tree contains 7: " + tree.contains(7));
+        System.out.println();
+
+        //testing add
+        System.out.println("//testing add...\n");
+        System.out.println("Adding 3..");
+        tree.add(3);
+        System.out.println("The tree contains 0: " + tree.contains(0));
+        System.out.println("The tree contains 1: " + tree.contains(1));
+        System.out.println("The tree contains 2: " + tree.contains(2));
+        System.out.println("The tree contains 3: " + tree.contains(3));
+        System.out.println("The tree contains 4: " + tree.contains(4));
+        System.out.println("The tree contains 5: " + tree.contains(5));
+        System.out.println("The tree contains 6: " + tree.contains(6));
+        System.out.println("The tree contains 7: " + tree.contains(7));
+        System.out.println("The tree contains 8: " + tree.contains(8));
+        System.out.println("The tree contains 9: " + tree.contains(9));
+        System.out.println("The tree contains 10: " + tree.contains(10));
+        System.out.println();
+
+
+        System.out.println("Adding 8..");
+        tree.add(8);
+        System.out.println("The tree contains 0: " + tree.contains(0));
+        System.out.println("The tree contains 1: " + tree.contains(1));
+        System.out.println("The tree contains 2: " + tree.contains(2));
+        System.out.println("The tree contains 3: " + tree.contains(3));
+        System.out.println("The tree contains 4: " + tree.contains(4));
+        System.out.println("The tree contains 5: " + tree.contains(5));
+        System.out.println("The tree contains 6: " + tree.contains(6));
+        System.out.println("The tree contains 7: " + tree.contains(7));
+        System.out.println("The tree contains 8: " + tree.contains(8));
+        System.out.println("The tree contains 9: " + tree.contains(9));
+        System.out.println("The tree contains 10: " + tree.contains(10));
+        System.out.println();
+
+        System.out.println("Adding 4,2,1..");
+        tree.add(4);
+        tree.add(2);
+        tree.add(1);
+
+        System.out.println("The tree contains 0: " + tree.contains(0));
+        System.out.println("The tree contains 1: " + tree.contains(1));
+        System.out.println("The tree contains 2: " + tree.contains(2));
+        System.out.println("The tree contains 3: " + tree.contains(3));
+        System.out.println("The tree contains 4: " + tree.contains(4));
+        System.out.println("The tree contains 5: " + tree.contains(5));
+        System.out.println("The tree contains 6: " + tree.contains(6));
+        System.out.println("The tree contains 7: " + tree.contains(7));
+        System.out.println("The tree contains 8: " + tree.contains(8));
+        System.out.println("The tree contains 9: " + tree.contains(9));
+        System.out.println("The tree contains 10: " + tree.contains(10));
+        System.out.println("The tree contains 11: " + tree.contains(11));
+        System.out.println();
+
+        System.out.println("Adding 6,7,10,9,11...");
+        tree.add(6);
+        tree.add(7);
+        tree.add(10);
+        tree.add(9);
+        tree.add(11);
+        
+
+        System.out.println("The tree contains 0: " + tree.contains(0));
+        System.out.println("The tree contains 1: " + tree.contains(1));
+        System.out.println("The tree contains 2: " + tree.contains(2));
+        System.out.println("The tree contains 3: " + tree.contains(3));
+        System.out.println("The tree contains 4: " + tree.contains(4));
+        System.out.println("The tree contains 5: " + tree.contains(5));
+        System.out.println("The tree contains 6: " + tree.contains(6));
+        System.out.println("The tree contains 7: " + tree.contains(7));
+        System.out.println("The tree contains 8: " + tree.contains(8));
+        System.out.println("The tree contains 9: " + tree.contains(9));
+        System.out.println("The tree contains 10: " + tree.contains(10));
+        System.out.println("The tree contains 11: " + tree.contains(11));
+        System.out.println();
+
+        //testing print in order
+        System.out.println("//testing print in order...\n");
+        tree.printInOrder();
+        System.out.println();
+
+        //testing print pre-order
+        System.out.println("//testing print pre order...\n");
+        tree.printPreOrder();
+        System.out.println();
+
+        //testing print post-order
+        System.out.println("//testing print post order...\n");
+        tree.printPostOrder();
+        System.out.println();
+
+
+        //testing tostring inorder
+        System.out.println("//testing tostring inorder...\n");
+        System.out.println(tree.toStringInOrder());
+        System.out.println();
+
+        //testing tostring preorder
+        System.out.println("//testing tostring preorder...\n");
+        System.out.println(tree.toStringPreOrder());
+        System.out.println();
+
+        //testing tostring postorder
+        System.out.println("//testing tostring postorder...\n");
+        System.out.println(tree.toStringPostOrder());
+        System.out.println();
+
+    }
+
+    public static void testHashMap(){
+        //testing hashmap
+        System.out.println("//testing hashmap...\n");
+        HashMap<Integer, String> map = new HashMap<>(8);
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
+
+        //testing put
+        System.out.println("//testing put...\n");
+
+        System.out.println("putting value three in key 3...");
+        map.put(3, "three");
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
+
+        System.out.println("putting value four in key 4...");
+        map.put(4, "four");
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
+
+        System.out.println("putting values five,six,seven and two in keys 5,6,7 and 2...");
+        map.put(5, "five");
+        map.put(6, "six");
+        map.put(7, "seven");
+        map.put(2, "two");
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
+
+        System.out.println("putting value eight in key 6");
+        map.put(6, "eight");
+        System.out.println("putting value eight in key 8");
+        map.put(8, "eight");
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
+
+        System.out.println("putting value nine, ten, eleven ,twelve, sixteen, eighteen, twenty in keys 9,10,11,12,16,18,20");
+        map.put(9, "nine");
+        map.put(10, "ten");
+        map.put(11, "eleven");
+        map.put(12, "twelve");
+        map.put(16, "sixteen");
+        map.put(18, "eighteen");
+        map.put(20, "twenty");
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
+
+        //testing get
+        System.out.println("//testing get...\n");
+
+        System.out.println("value of 1: " + map.get(1));
+        System.out.println("value of 2: " + map.get(2));
+        System.out.println("value of 4: " + map.get(4));
+        System.out.println("value of 5: " + map.get(5));
+        System.out.println("value of 6: " + map.get(6));
+        System.out.println("value of 8: " + map.get(8));
+        System.out.println("value of 99: " + map.get(99));
+        System.out.println();
+
+        // //testing keyset
+        // System.out.println("//testing keyset...");
+        // System.out.println("Keys: " + map.keySet());
+        // System.out.println();
+
+        // //testing values
+        // System.out.println("//testing values...");
+        // System.out.println("Values: " + map.values());
+        // System.out.println();
+
+        //testing contains key
+        System.out.println("//testing contains key...\n");        
+        System.out.println("key 1 exits: " + map.containsKey(1));
+        System.out.println("key 2 exits: " + map.containsKey(2));
+        System.out.println("key 4 exits: " + map.containsKey(4));
+        System.out.println("key 5 exits: " + map.containsKey(5));
+        System.out.println("key 6 exits: " + map.containsKey(6));
+        System.out.println("key 8 exits: " + map.containsKey(8));
+        System.out.println("key 99 exits: " + map.containsKey(99));
+        System.out.println();
+
+        //testing contains value
+        System.out.println("//testing contains value...\n");
+        System.out.println("value one exits: " + map.containsValue("one"));
+        System.out.println("value two exits: " + map.containsValue("two"));
+        System.out.println("value four exits: " + map.containsValue("four"));
+        System.out.println("value six exits: " + map.containsValue("six"));
+        System.out.println("value seven exits: " + map.containsValue("seven"));
+        System.out.println("value eight exits: " + map.containsValue("eight"));
+        System.out.println("value ninety nine exits: " + map.containsValue("ninety nine"));
+        System.out.println();
+
+        // //testing remove
+        // System.out.println("//testing remove...");
+        // System.out.println("map is empty: " + map.isEmpty());
+        // System.out.println("Size: " + map.size());
+        // System.out.println(map);
+        // System.out.println();
+
+        // System.out.println("Removing key 4, value " + map.remove(4) + "...");
+        // map.remove(4);
+        // System.out.println("key 4 exits: " + map.containsKey(4));
+        // System.out.println("value four exits: " + map.containsValue("four"));
+        // System.out.println("map is empty: " + map.isEmpty());
+        // System.out.println("Size: " + map.size());
+        // System.out.println(map);
+        // System.out.println();
+        
+        // System.out.println("Removing key 2, value " + map.remove(2) + "...");
+        // map.remove(2);
+        // System.out.println("key 2 exits: " + map.containsKey(2));
+        // System.out.println("value two exits: " + map.containsValue("two"));
+        // System.out.println("map is empty: " + map.isEmpty());
+        // System.out.println("Size: " + map.size());
+        // System.out.println(map);
+        // System.out.println();
+        
+        // System.out.println("Removing key 7, value " + map.remove(7) + "...");
+        // map.remove(7);
+        // System.out.println("key 7 exits: " + map.containsKey(7));
+        // System.out.println("value seven exits: " + map.containsValue("seven"));
+        // System.out.println("map is empty: " + map.isEmpty());
+        // System.out.println("Size: " + map.size());
+        // System.out.println(map);
+        // System.out.println();
+
+        // //testing clear
+        // System.out.println("//testing clear...\n");
+        // map.put(1, "one");
+        // map.put(8, "eight");
+        // map.put(9, "nine");
+        // System.out.println("map is empty: " + map.isEmpty());
+        // System.out.println("Size: " + map.size());
+        // System.out.println(map);
+        // System.out.println();
+
+        // map.clear();
+        // System.out.println("map is empty: " + map.isEmpty());
+        // System.out.println("Size: " + map.size());
+        // System.out.println(map);
+        // System.out.println();
+
+        // System.out.println("key 1 exits: " + map.containsKey(1));
+        // System.out.println("key 5 exits: " + map.containsKey(5));
+        // System.out.println("key 9 exits: " + map.containsKey(9));
+        // System.out.println();
+
+        // System.out.println("value one exits: " + map.containsValue("one"));
+        // System.out.println("value five exits: " + map.containsValue("five"));
+        // System.out.println("value nine exits: " + map.containsValue("nine"));
+        // System.out.println();
+
+        
+        
+    }
     public static void test(){
         
     }

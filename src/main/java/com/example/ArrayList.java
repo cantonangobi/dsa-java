@@ -20,7 +20,7 @@ public class ArrayList<T> {
     }
 
     @SuppressWarnings("unchecked")
-    private void resizeUp(){
+    private void resizeUp(){ //O(n)
         capacity = capacity * 2;
         T[] new_list = (T[]) new Object[capacity];
         for (int i = 0; i < size; i++){
@@ -30,7 +30,7 @@ public class ArrayList<T> {
     }
 
     @SuppressWarnings("unchecked")
-    private void resizeDown(){
+    private void resizeDown(){ //O(n)
         capacity = capacity / 2;
         T[] new_list = (T[]) new Object[capacity];
         for (int i = 0; i < size; i++){
@@ -39,7 +39,7 @@ public class ArrayList<T> {
         list = new_list;
     }
 
-    public String toString(){
+    public String toString(){ //O(n)
         String string = "[";
 
         for (int i = 0; i < size; i++){
@@ -60,7 +60,7 @@ public class ArrayList<T> {
         return size;
     }
 
-    public void add(int index, T element){
+    public void add(int index, T element){ //O(n)
         if (index < 0 || index > size){
             throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
         }
@@ -74,19 +74,19 @@ public class ArrayList<T> {
         size += 1;
     }
 
-    public void add(T element){
+    public void add(T element){ //O(1)
         add(size, element);
     }
 
-    public void addLast(T element){
+    public void addLast(T element){ //O(1)
         add(size, element);
     }
 
-    public void addFirst(T element){
+    public void addFirst(T element){ //O(1)
         add(0, element);
     }
 
-    public boolean contains(T element){
+    public boolean contains(T element){ //O(n)
         for (int i = 0; i < size; i ++){
             if (element.equals(list[i])){
                 return true;
@@ -95,7 +95,7 @@ public class ArrayList<T> {
         return false;
     }
 
-    public int indexOf(T element){
+    public int indexOf(T element){ //O(n)
         for (int i = 0; i < size; i++){
             if (element.equals(list[i])){
                 return i;
@@ -105,7 +105,7 @@ public class ArrayList<T> {
         return -1;
     }
 
-    public int lastIndexOf(T element){
+    public int lastIndexOf(T element){ //O(n)
         int last_index = -1;
 
         for (int i = 0; i < size; i++){
@@ -117,39 +117,39 @@ public class ArrayList<T> {
         return last_index;
     }
 
-    public T get(int index){
+    public T get(int index){ //O(1)
         if (index < 0 || index >= size){
             throw new IndexOutOfBoundsException("index: " + index +", size: " + size);
         }
         return list[index];
     }
 
-    public T getFirst(){
+    public T getFirst(){ //O(1)
         return list[0];
     }
 
-    public T getLast(){
+    public T getLast(){ //O(1)
         return list[size-1];
     }
     
-    public void set(int index, T element){
+    public void set(int index, T element){ //O(1)
         if (index < 0 || index >= size){
             throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
         }
         list[index] = element;
     }
 
-    public ArrayList<T> reversed(){
-        ArrayList<T> result = new ArrayList<>(capacity);
+    public ArrayList<T> reversed(){ //O(n)
+        ArrayList<T> result = new ArrayList<>(capacity); 
 
         for (int i = size-1; i >= 0; i--){
-            result.add(list[i]);
+            result.add(list[i]); //O(1)
         }
 
         return result;
     }
 
-    public ArrayList<T> reverseInPlace(){
+    public ArrayList<T> reverseInPlace(){ //O(n)
         int mid = (size-1)/2;
         for (int i = 0; i <= mid; i++){
             T temp = list[i];
@@ -159,7 +159,7 @@ public class ArrayList<T> {
         return this;
     }
 
-    public T remove(int index){
+    public T remove(int index){ //O(n)
         if (index < 0 || index >= size){
             throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
         }
@@ -174,16 +174,16 @@ public class ArrayList<T> {
         return element;
     }
 
-    public T removeFirst(){
+    public T removeFirst(){ //O(n)
         return remove(0);
     }
  
-    public T removeLast(){
+    public T removeLast(){ //O(1)
         return remove(size -1);
     }
 
     @SuppressWarnings("unchecked")
-    public void clear(){
+    public void clear(){ //O(1)
         capacity = 10;
         list = (T[]) new Object[capacity];
         size = 0;

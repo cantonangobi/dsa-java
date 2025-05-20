@@ -1,18 +1,18 @@
 package com.example;
 
 public class LinkedList<T> {
-    private Node<T> head;
+    private Node<T> first;
     private int size;
 
     public LinkedList(){
-        head = null;
+        first = null;
         size = 0;
     }
 
-    public String toString(){
+    public String toString(){ //O(n)
         String str = "[";
         if (!isEmpty()){
-            str += String.valueOf(head);
+            str += String.valueOf(first); 
         }
         str += "]";
         return str;
@@ -26,35 +26,36 @@ public class LinkedList<T> {
         return size;
     }
 
-    public void add(T element){
-        Node<T> newNode = new Node<T>(element);
-        if (head == null){
-            head = newNode;
-        }
-        else{
-            Node<T> currentNode = head;
-            while (currentNode.getNext() != null){
-                currentNode = currentNode.getNext();
-            }
-            currentNode.setNext(newNode);
-        }
-        size += 1;
-    }
+    // public void add(T element){ //O(1)
+    //     // Node<T> newNode = new Node<T>(element);
+    //     // if (head == null){
+    //     //     head = newNode;
+    //     // }
+    //     // else{
+    //     //     Node<T> currentNode = head;
+    //     //     while (currentNode.getNext() != null){
+    //     //         currentNode = currentNode.getNext();
+    //     //     }
+    //     //     currentNode.setNext(newNode);
+    //     // }
+    //     // size += 1;
+    //     addFirst(element);
+    // }
 
-    public void add(int index, T element){
+    public void add(int index, T element){ //O(n)
         if (index < 0 || index > size){
             throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
         }
         Node<T> newNode = new Node<T>(element);
-        if (head == null){
-            head = newNode;
+        if (first == null){
+            first = newNode;
         }
         else if (index == 0){
-            newNode.setNext(head);
-            head = newNode;
+            newNode.setNext(first);
+            first = newNode;
         }
         else{
-            Node<T> currentNode = head;
+            Node<T> currentNode = first;
             for (int i = 0; i < index-1; i++){
                 currentNode = currentNode.getNext();
             }
@@ -65,16 +66,16 @@ public class LinkedList<T> {
         
     }
 
-    public void addFirst(T element){
+    public void addFirst(T element){ //O(1)
         add(0, element);
     }
 
-    public void addLast(T element){
+    public void addLast(T element){ //O(n)
         add(size, element);
     }
 
-    public boolean contains(T element){
-        Node<T> currentNode = head;
+    public boolean contains(T element){ //O(n)
+        Node<T> currentNode = first;
         while (currentNode != null){
             if (element.equals(currentNode.getElement())){
                 return true;
@@ -85,10 +86,10 @@ public class LinkedList<T> {
         return false;
     }
 
-    public int indexOf(T element){
+    public int indexOf(T element){ //O(n)
         int index = 0;
 
-        Node<T> currentNode = head;
+        Node<T> currentNode = first;
         while (currentNode != null){
             if (element.equals(currentNode.getElement())){
                 return index;
@@ -100,11 +101,11 @@ public class LinkedList<T> {
         return -1;
     }
 
-    public int lastIndexOf(T element){
+    public int lastIndexOf(T element){ //O(n)
         int index = 0;
         int last_index = -1;
 
-        Node<T> currentNode = head;
+        Node<T> currentNode = first;
         while (currentNode != null){
             if (element == currentNode.getElement()){
                 last_index = index;
@@ -116,32 +117,32 @@ public class LinkedList<T> {
         return last_index;
     }
 
-    public T get(int index){
+    public T get(int index){ //O(n)
         if (index < 0 || index >= size){
             throw new IndexOutOfBoundsException("index: " + index + ", size: " + size);
         }
         
-        Node<T> currentNode = head;
+        Node<T> currentNode = first;
         for (int i = 0; i < index; i++){
             currentNode = currentNode.getNext();
         }
         return currentNode.getElement();
     }
     
-    public T getFirst(){
-        return head.getElement();
+    public T getFirst(){ //O(1)
+        return first.getElement();
     }
     
-    public T getLast(){
+    public T getLast(){ //O(n)
         return get(size-1);
     }
 
-    public void set(int index, T element){
+    public void set(int index, T element){ //O(n)
         if (index < 0 || index >= size){
             throw new IndexOutOfBoundsException();
         }
         int counter = 0;
-        Node<T> currentNode = head;
+        Node<T> currentNode = first;
         while (counter < index){
             counter += 1;
             currentNode = currentNode.getNext();
@@ -149,10 +150,10 @@ public class LinkedList<T> {
         currentNode.setElement(element);
     }
 
-    public LinkedList<T> reversed(){
+    public LinkedList<T> reversed(){ //O(n)
         LinkedList<T> result = new LinkedList<>();
 
-        Node<T> currentNode = head;
+        Node<T> currentNode = first;
 
         while (currentNode != null){
             result.addFirst(currentNode.getElement());
@@ -162,7 +163,7 @@ public class LinkedList<T> {
         return result;
     }
 
-    public LinkedList<T> reverseInPlace(){
+    public LinkedList<T> reverseInPlace(){ //O(n)
         
 
         //loop through the list
@@ -170,40 +171,35 @@ public class LinkedList<T> {
         //for each element, make it point to the previous element
 
         if (size > 1){
-            Node<T> currentNode = head.getNext();
-            Node<T> previousNode = head;
+            Node<T> currentNode = first.getNext();
+            Node<T> previousNode = first;
             while (currentNode != null){
                 Node<T> nextNode = currentNode.getNext();
-                // System.out.println(temp);
-                // System.out.println(currentNode);
-                // System.out.println(previousNode.getElement());
                 currentNode.setNext(previousNode);
                 previousNode = currentNode;
-                head = currentNode;
+                first = currentNode;
                 currentNode = nextNode;
             }
             
         }
         
-        
-
         return this;
     }
 
-    public T remove(int index){
+    public T remove(int index){ //O(n)
         if (index < 0 || index >= size){
             throw new IndexOutOfBoundsException();
         }
-        T result = head.getElement();
+        T result = first.getElement();
         if (size == 1){
-            head = null;
+            first = null;
         }
         else if (index == 0){
-            head = head.getNext();
+            first = first.getNext();
         }
         else{
             // Node<T> previousNode = null;
-            Node<T> currentNode = head;
+            Node<T> currentNode = first;
             for (int i = 0; i < index-1; i++){
                 // previousNode = currentNode;
                 currentNode = currentNode.getNext();
@@ -216,16 +212,16 @@ public class LinkedList<T> {
         return result;
     }
 
-    public T removeFirst(){
+    public T removeFirst(){ //O(1)
         return remove(0);
     }
     
-    public T removeLast(){
+    public T removeLast(){ //O(n)
         return remove(size-1);
     }
 
-    public void clear(){
-        head = null;
+    public void clear(){ //O(1)
+        first = null;
         size = 0;
     }
 
