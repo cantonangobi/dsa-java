@@ -26,21 +26,21 @@ public class LinkedList<T> {
         return size;
     }
 
-    // public void add(T element){ //O(1)
-    //     // Node<T> newNode = new Node<T>(element);
-    //     // if (head == null){
-    //     //     head = newNode;
-    //     // }
-    //     // else{
-    //     //     Node<T> currentNode = head;
-    //     //     while (currentNode.getNext() != null){
-    //     //         currentNode = currentNode.getNext();
-    //     //     }
-    //     //     currentNode.setNext(newNode);
-    //     // }
-    //     // size += 1;
-    //     addFirst(element);
-    // }
+    public void add(T element){ //O(n)
+        // Node<T> newNode = new Node<T>(element);
+        // if (head == null){
+        //     head = newNode;
+        // }
+        // else{
+        //     Node<T> currentNode = head;
+        //     while (currentNode.getNext() != null){
+        //         currentNode = currentNode.getNext();
+        //     }
+        //     currentNode.setNext(newNode);
+        // }
+        // size += 1;
+        addLast(element);
+    }
 
     public void add(int index, T element){ //O(n)
         if (index < 0 || index > size){

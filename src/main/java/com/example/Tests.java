@@ -2,9 +2,9 @@ package com.example;
 
 // import java.util.HashMap;
 // import java.util.ArrayList;
-import java.util.LinkedList;
+// import java.util.LinkedList;
 // import java.util.Map;
-import java.util.Queue;
+// import java.util.Queue;
 // import java.util.Stack;
 
 public abstract class Tests {   
@@ -543,7 +543,7 @@ public abstract class Tests {
 
         //testing constructor, toString, isEmpty and size functions
         System.out.println("//testing constructor, toString, isEmpty and size functions");
-        Queue<Integer> queue = new LinkedList<>();
+        Queue<Integer> queue = new Queue<>();
         System.out.println("is the queue empty? " + queue.isEmpty());
         System.out.println("size: " + queue.size());
         System.out.println(queue);
@@ -790,7 +790,11 @@ public abstract class Tests {
         System.out.println("Size: " + map.size());
         System.out.println(map);
         System.out.println();
-
+        // System.out.println("Test");
+        //testing keyset
+        System.out.println("//testing keyset...");
+        System.out.println("Keys: " + map.keySet());
+        System.out.println();
         //testing get
         System.out.println("//testing get...\n");
 
@@ -802,16 +806,13 @@ public abstract class Tests {
         System.out.println("value of 8: " + map.get(8));
         System.out.println("value of 99: " + map.get(99));
         System.out.println();
-
+        
         // //testing keyset
         // System.out.println("//testing keyset...");
         // System.out.println("Keys: " + map.keySet());
         // System.out.println();
 
-        // //testing values
-        // System.out.println("//testing values...");
-        // System.out.println("Values: " + map.values());
-        // System.out.println();
+        
 
         //testing contains key
         System.out.println("//testing contains key...\n");        
@@ -835,69 +836,80 @@ public abstract class Tests {
         System.out.println("value ninety nine exits: " + map.containsValue("ninety nine"));
         System.out.println();
 
-        // //testing remove
-        // System.out.println("//testing remove...");
-        // System.out.println("map is empty: " + map.isEmpty());
-        // System.out.println("Size: " + map.size());
-        // System.out.println(map);
-        // System.out.println();
+        //testing keyset
+        System.out.println("//testing keyset...");
+        System.out.println("Keys: " + map.keySet());
+        System.out.println();
 
-        // System.out.println("Removing key 4, value " + map.remove(4) + "...");
-        // map.remove(4);
-        // System.out.println("key 4 exits: " + map.containsKey(4));
-        // System.out.println("value four exits: " + map.containsValue("four"));
-        // System.out.println("map is empty: " + map.isEmpty());
-        // System.out.println("Size: " + map.size());
-        // System.out.println(map);
-        // System.out.println();
+        //testing values
+        System.out.println("//testing values...");
+        System.out.println("Values: " + map.values());
+        System.out.println();
+
+        //testing remove
+        System.out.println("//testing remove...");
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
+
+        System.out.println("Removing key 4, value " + map.remove(4) + "...");
+        map.remove(4);
+        System.out.println("key 4 exits: " + map.containsKey(4));
+        System.out.println("value four exits: " + map.containsValue("four"));
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
         
-        // System.out.println("Removing key 2, value " + map.remove(2) + "...");
-        // map.remove(2);
-        // System.out.println("key 2 exits: " + map.containsKey(2));
-        // System.out.println("value two exits: " + map.containsValue("two"));
-        // System.out.println("map is empty: " + map.isEmpty());
-        // System.out.println("Size: " + map.size());
-        // System.out.println(map);
-        // System.out.println();
+        System.out.println("Removing key 2, value " + map.remove(2) + "...");
+        map.remove(2);
+        System.out.println("key 2 exits: " + map.containsKey(2));
+        System.out.println("value two exits: " + map.containsValue("two"));
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
         
-        // System.out.println("Removing key 7, value " + map.remove(7) + "...");
-        // map.remove(7);
-        // System.out.println("key 7 exits: " + map.containsKey(7));
-        // System.out.println("value seven exits: " + map.containsValue("seven"));
-        // System.out.println("map is empty: " + map.isEmpty());
-        // System.out.println("Size: " + map.size());
-        // System.out.println(map);
-        // System.out.println();
+        System.out.println("Removing key 7, value " + map.remove(7) + "...");
+        map.remove(7);
+        System.out.println("key 7 exits: " + map.containsKey(7));
+        System.out.println("value seven exits: " + map.containsValue("seven"));
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
 
-        // //testing clear
-        // System.out.println("//testing clear...\n");
-        // map.put(1, "one");
-        // map.put(8, "eight");
-        // map.put(9, "nine");
-        // System.out.println("map is empty: " + map.isEmpty());
-        // System.out.println("Size: " + map.size());
-        // System.out.println(map);
-        // System.out.println();
+        //testing clear
+        System.out.println("//testing clear...\n");
+        map.put(1, "one");
+        map.put(8, "eight");
+        map.put(9, "nine");
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
 
-        // map.clear();
-        // System.out.println("map is empty: " + map.isEmpty());
-        // System.out.println("Size: " + map.size());
-        // System.out.println(map);
-        // System.out.println();
+        map.clear();
+        System.out.println("map is empty: " + map.isEmpty());
+        System.out.println("Size: " + map.size());
+        System.out.println(map);
+        System.out.println();
 
-        // System.out.println("key 1 exits: " + map.containsKey(1));
-        // System.out.println("key 5 exits: " + map.containsKey(5));
-        // System.out.println("key 9 exits: " + map.containsKey(9));
-        // System.out.println();
+        System.out.println("key 1 exits: " + map.containsKey(1));
+        System.out.println("key 5 exits: " + map.containsKey(5));
+        System.out.println("key 9 exits: " + map.containsKey(9));
+        System.out.println();
 
-        // System.out.println("value one exits: " + map.containsValue("one"));
-        // System.out.println("value five exits: " + map.containsValue("five"));
-        // System.out.println("value nine exits: " + map.containsValue("nine"));
-        // System.out.println();
+        System.out.println("value one exits: " + map.containsValue("one"));
+        System.out.println("value five exits: " + map.containsValue("five"));
+        System.out.println("value nine exits: " + map.containsValue("nine"));
+        System.out.println();
 
         
         
     }
+    
     public static void test(){
         
     }
