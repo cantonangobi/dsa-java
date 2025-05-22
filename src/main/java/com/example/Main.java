@@ -19,6 +19,7 @@ public class Main {
         // System.out.println(9 % 8);
         
         Tests.testHashMap();
+        // Tests.test();
 
     }
 }

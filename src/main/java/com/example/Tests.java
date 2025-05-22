@@ -1,6 +1,6 @@
 package com.example;
 
-// import java.util.HashMap;
+import java.util.HashMap;
 // import java.util.ArrayList;
 // import java.util.LinkedList;
 // import java.util.Map;
@@ -911,6 +911,7 @@ public abstract class Tests {
     }
     
     public static void test(){
-        
+        // int[] arr = new int[5];
+        // System.out.println(arr[4]);
     }
 }

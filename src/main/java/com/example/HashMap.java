@@ -1,14 +1,12 @@
 package com.example;
 
 public class HashMap<K, V> {
-    // private ArrayList<K> keys;
     private ArrayList<LinkedList<Pair<K,V>>> map;
     private int size;
     private int capacity;
 
-    public HashMap(){
+    public HashMap(){ //O(n)
         capacity = 16;
-        // keys = new ArrayList<>(capacity);
         map = new ArrayList<>(capacity);
         for (int i = 0; i < capacity; i++){
             map.add(new LinkedList<>());
@@ -16,9 +14,8 @@ public class HashMap<K, V> {
         size = 0;
     }
 
-    public HashMap(int capacity){
+    public HashMap(int capacity){ //O(n)
         this.capacity = capacity;
-        // keys = new ArrayList<>(capacity);
         map = new ArrayList<>(capacity);
         for (int i = 0; i < capacity; i++){
             map.add(new LinkedList<>());
@@ -26,42 +23,36 @@ public class HashMap<K, V> {
         size = 0;
     }
 
-    private int getHash(K key){
+    private int getHashedIndex(K key){ //O(1)
         int index = key.hashCode();
-        // System.out.println(index);
         return index % capacity;
     }
     
-    public String toString(){
+    public String toString(){ //O(n^2)
         String result = "{";
 
         for (int i = 0; i < map.size(); i++){
-            // result = result + map.get(i) + "\n";
             LinkedList<Pair<K,V>> list = map.get(i);
-
             for (int j = 0; j < list.size(); j++){
                 result = result + list.get(j);
                 result += ",";
             }
-            // if (i+1 < map.size()){
-            //     result += ",";
-            // }
         }
         return result + "}";
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty(){ //O(1)
 
         return size == 0;
     }
 
-    public int size(){
+    public int size(){ //O(1)
 
         return size;
     }
     
-    public boolean containsKey(K key){
-        int index = getHash(key);
+    public boolean containsKey(K key){ //O(n)
+        int index = getHashedIndex(key);
         LinkedList<Pair<K,V>> list = map.get(index);
         for (int i = 0; i < list.size(); i++){
             if (list.get(i).getKey() == key){
@@ -72,7 +63,7 @@ public class HashMap<K, V> {
         
     }   
 
-    public boolean containsValue(V value){
+    public boolean containsValue(V value){ //O(n)
         for (int i = 0; i < map.size(); i++){
             LinkedList<Pair<K,V>> list = map.get(i);
             for (int j = 0; j < list.size(); j++ ){
@@ -84,8 +75,8 @@ public class HashMap<K, V> {
         return false;
     }
 
-    public void put(K key, V value){
-        int index = getHash(key);
+    public void put(K key, V value){ //O(n)
+        int index = getHashedIndex(key);
 
         boolean key_exists = false;
         LinkedList<Pair<K,V>> mapped_list = map.get(index);
@@ -104,8 +95,8 @@ public class HashMap<K, V> {
 
     }
 
-    public V get(K key){
-        int index = getHash(key);
+    public V get(K key){ //O(n)
+        int index = getHashedIndex(key);
         LinkedList<Pair<K,V>> list = map.get(index);
         for (int i = 0; i < list.size(); i++){
             if (list.get(i).getKey() == key){
@@ -115,7 +106,7 @@ public class HashMap<K, V> {
         return null;
     }
 
-    public ArrayList<K> keySet(){
+    public ArrayList<K> keySet(){//O(n^2)
         ArrayList<K> keys = new ArrayList<>();
         for (int i = 0; i < map.size(); i++){
             LinkedList<Pair<K,V>> list = map.get(i);
@@ -127,7 +118,7 @@ public class HashMap<K, V> {
         return keys;
 
     }
-    public ArrayList<V> values(){
+    public ArrayList<V> values(){//O(n^2)
         ArrayList<V> values = new ArrayList<>();
         for (int i = 0; i < map.size(); i++){
             LinkedList<Pair<K,V>> list = map.get(i);
@@ -140,8 +131,8 @@ public class HashMap<K, V> {
 
     }
 
-    public V remove(K key){
-        int index = getHash(key);
+    public V remove(K key){//O(n)
+        int index = getHashedIndex(key);
         LinkedList<Pair<K,V>> list = map.get(index);
         for (int i = 0; i < list.size(); i++){
             if (key == list.get(i).getKey()){
@@ -154,7 +145,7 @@ public class HashMap<K, V> {
         return null;
     }
 
-    public void clear(){
+    public void clear(){//O(n)
         map = new ArrayList<>(capacity);
         for (int i = 0; i < capacity; i++){
             map.add(new LinkedList<>());
